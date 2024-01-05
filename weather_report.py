@@ -118,20 +118,6 @@ def send_weather(access_token, weather):
     print(requests.post(url, json.dumps(body)).text)
 
 
-def send_timetable(access_token, message):
-    body = {
-        "touser": openId,
-        "template_id": timetable_template_id.strip(),
-        "url": "https://weixin.qq.com",
-        "data": {
-            "message": {
-                "value": message
-            },
-        }
-    }
-    url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}'.format(access_token)
-    print(requests.post(url, json.dumps(body)).text)
-
 
 def weather_report(city):
     # 1.获取access_token
@@ -143,13 +129,6 @@ def weather_report(city):
     send_weather(access_token, weather)
 
 
-def timetable(message):
-    # 1.获取access_token
-    access_token = get_access_token()
-    # 3. 发送消息
-    send_timetable(access_token, message)
-
 
 if __name__ == '__main__':
     weather_report("青岛")
-    # timetable("第二教学楼十分钟后开始英语课")
