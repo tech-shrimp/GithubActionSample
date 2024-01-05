@@ -6,7 +6,7 @@
 作者 **技术爬爬虾** 全网同名，转载请注明作者
 
 ## Part1 自动构建 画爱心为可执行程序
-Fork本项目，Actions-->构建爱心可执行程序-->run work flow-->执行结束查看结果
+Fork本项目，Actions-->画爱心Windows版-->run work flow-->结束后查看结果
 -->下载程序-->love_heart
 
 ## Part2 天气推送
