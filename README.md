@@ -1,13 +1,19 @@
-# 免费定时任务
-原理：使用Github Action功能，运行python程序 实现无服务器的免费定时任务
+# Github Action功能样例
+
+原理：使用Github Action功能，运行python程序，实现无服务器的免费任务，比如天气推送，薅羊毛，签到
 
 ### 视频教程
 
 作者 **技术爬爬虾** 全网同名，转载请注明作者
 
 ## Part1 构建画爱心为可执行程序
+构架Windows 可执行程序:
 Fork本项目，Actions-->画爱心Windows版-->run work flow-->结束后查看结果
--->下载程序-->love_heart
+-->Artifacts-->下载love_heart
+
+构架Ubuntu 可执行程序:
+Fork本项目，Actions-->画爱心Ubuntu版-->run work flow-->结束后查看结果
+-->Artifacts-->下载love_heart
 
 ## Part2 天气推送
 
@@ -38,11 +44,14 @@ https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 对你说的话：{{today_note.DATA}}
 ```
 
-### 项目搭建 
-Fork本项目，进入自己项目的Settings  ----> Secrets and variables ---> Actions --> New repository secret
-配置好以下四个值
+### 项目配置 
+Fork本项目
+进入自己项目的Settings  ----> Secrets and variables ---> Actions --> New repository secret
+配置好以下四个值（见上文）
 
 <img width="590" alt="image" src="https://github.com/tech-shrimp/GithubActionSample/assets/154193368/9e6b799d-9230-4d3e-8966-6c6f49e9b89f">
 
+进入自己项目的Action  ----> 天气预报推送 ---> weather_report.yml --> 修改cron表达式的执行时间
+<img width="503" alt="image" src="https://github.com/tech-shrimp/GithubActionSample/assets/154193368/badcc0fa-def5-428f-9238-fa6b549baefc">
 
 
