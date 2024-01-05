@@ -1,9 +1,8 @@
-# 免费微信推送
-原理：申请免费的测试版公众号，可获得免费的模板推送功能。
+# 免费定时任务
+原理：使用Github Action功能，运行python程序 实现无服务器的免费定时任务
 
 ### 视频教程
 
-https://www.bilibili.com/video/BV1Ng4y1r7EP/
 
 作者 **技术爬爬虾** 全网同名，转载请注明作者
 
@@ -24,7 +23,7 @@ https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 
 模板标题随便填，模板内容如下，可以根据需求自己定制
 
-模板一 天气预报：
+模板内容：
 ```copy
 今天：{{date.DATA}} 
 地区：{{region.DATA}} 
@@ -34,22 +33,10 @@ https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 对你说的话：{{today_note.DATA}}
 ```
 
-模板二 课程提醒：
-```copy
-消息：{{message.DATA}}	
-```
+### 项目搭建 
+首先Fork本项目，进入Settings  ----> Secrets and variables ---> Actions --> New repository secret
+配置好以下四个值
+<img width="590" alt="image" src="https://github.com/tech-shrimp/GithubActionSample/assets/154193368/9e6b799d-9230-4d3e-8966-6c6f49e9b89f">
 
-### 配置代码
 
-将上面获得的几个值填入代码这几行
-![image](https://github.com/tech-shrimp/FreeWechatPush/assets/154193368/fe5a78ad-b4eb-45f8-a271-eda55f33a617)
-### 配置定时任务
 
-修改这几行
-![image](https://github.com/tech-shrimp/FreeWechatPush/assets/154193368/58b7c58c-ac22-4a1a-b3e8-2eacc01b7329)
-
-### 安装python依赖，启动项目
-```copy
-pip3 install -r requirements.txt
-python main.py
-```
