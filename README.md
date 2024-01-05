@@ -3,8 +3,11 @@
 
 ### 视频教程
 
-
 作者 **技术爬爬虾** 全网同名，转载请注明作者
+
+## Part1 自动构建
+
+## Part2 天气推送
 
 ### 申请公众号测试账户
 
@@ -34,8 +37,9 @@ https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
 ```
 
 ### 项目搭建 
-首先Fork本项目，进入Settings  ----> Secrets and variables ---> Actions --> New repository secret
+Fork本项目，进入自己项目的Settings  ----> Secrets and variables ---> Actions --> New repository secret
 配置好以下四个值
+
 <img width="590" alt="image" src="https://github.com/tech-shrimp/GithubActionSample/assets/154193368/9e6b799d-9230-4d3e-8966-6c6f49e9b89f">
 
 

@@ -4,6 +4,9 @@
 name: 天气预报推送
 
 on:
+  schedule:
+    # 此处是UTC时间，对应北京时间早七点
+    - cron : '00 23 * * *'
   workflow_dispatch:
 
 permissions:
