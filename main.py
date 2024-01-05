@@ -1,22 +1,17 @@
 # 安装依赖 pip3 install requests html5lib bs4 schedule
-
+import os
 import time
 import requests
 import json
-import schedule
 from bs4 import BeautifulSoup
 
-
 # 从测试号信息获取
-appID = ""
-appSecret = ""
-#收信人ID即 用户列表中的微信号，见上文
-openId = ""
+appID = os.environ.get("APP_ID")
+appSecret = os.environ.get("APP_SECRET")
+#收信人ID即 用户列表中的微信号
+openId = os.environ.get("OPEN_ID")
 # 天气预报模板ID
-weather_template_id = ""
-# 时间表模板ID
-timetable_template_id = ""
-
+weather_template_id = os.environ.get("TEMPLATE_ID")
 
 def get_weather(my_city):
     urls = ["http://www.weather.com.cn/textFC/hb.shtml",
@@ -158,9 +153,3 @@ def timetable(message):
 if __name__ == '__main__':
     weather_report("青岛")
     # timetable("第二教学楼十分钟后开始英语课")
-
-    # schedule.every().day.at("18:30").do(weather_report, "南京")
-    # schedule.every().monday.at("13:50").do(timetable, "第二教学楼十分钟后开始英语课")
-    #while True:
-    #    schedule.run_pending()
-    #    time.sleep(1)
