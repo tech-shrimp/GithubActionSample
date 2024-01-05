@@ -5,7 +5,7 @@
 
 作者 **技术爬爬虾** 全网同名，转载请注明作者
 
-## Part1 自动构建 画爱心为可执行程序
+## Part1 构建画爱心为可执行程序
 Fork本项目，Actions-->画爱心Windows版-->run work flow-->结束后查看结果
 -->下载程序-->love_heart
 
