@@ -7,12 +7,14 @@
 作者 **技术爬爬虾** 全网同名，转载请注明作者
 
 ## Part1 构建画爱心为可执行程序
+Fork本项目
+
 构架Windows 可执行程序:
-Fork本项目，Actions-->画爱心Windows版-->run work flow-->结束后查看结果
+Actions-->画爱心Windows版-->run work flow-->结束后查看结果
 -->Artifacts-->下载love_heart
 
 构架Ubuntu 可执行程序:
-Fork本项目，Actions-->画爱心Ubuntu版-->run work flow-->结束后查看结果
+Actions-->画爱心Ubuntu版-->run work flow-->结束后查看结果
 -->Artifacts-->下载love_heart
 
 ## Part2 天气推送
