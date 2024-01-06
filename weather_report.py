@@ -133,3 +133,4 @@ def weather_report(this_city):
 
 if __name__ == '__main__':
     weather_report(city)
+    # print(f"天气信息：   {get_weather("淄博")}")
