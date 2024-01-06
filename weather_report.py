@@ -120,11 +120,11 @@ def send_weather(access_token, weather):
 
 
 
-def weather_report(city):
+def weather_report(this_city):
     # 1.获取access_token
     access_token = get_access_token()
     # 2. 获取天气
-    weather = get_weather(city)
+    weather = get_weather(this_city)
     print(f"天气信息： {weather}")
     # 3. 发送消息
     send_weather(access_token, weather)
