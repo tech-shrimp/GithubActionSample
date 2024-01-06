@@ -130,12 +130,14 @@ def weather_report(this_user, this_city):
     weather = get_weather(this_city)
     print(f"天气信息： {weather}")
     # 3. 获取用户列表
-    print(f"用户列表： {this_user}")
+    print(f"用户： {this_user}")
     # 3. 发送消息
     send_weather(access_token, this_user, weather)
 
 
 
 if __name__ == '__main__':
+    print(f"用户列表： {openId_list})
+    print(f"地点列表： {Location_list})
     for _ in range(0,len(openId_list)):
         weather_report(openId_list[_],Location_list[_])
