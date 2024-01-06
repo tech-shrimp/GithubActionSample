@@ -129,7 +129,8 @@ def weather_report(this_city):
     weather = get_weather(this_city)
     print(f"天气信息： {weather}")
     # 3. 获取用户列表
-    print(f"用户列表： {openId_list}")
+    # print(f"用户列表： {openId_list}")
+    print(f"用户列表： {openId}")
     # 3. 发送消息
     send_weather(access_token, weather)
 
