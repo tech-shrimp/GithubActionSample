@@ -8,9 +8,9 @@ from bs4 import BeautifulSoup
 appID = os.environ.get("APP_ID")
 appSecret = os.environ.get("APP_SECRET")
 # 收信人ID即 用户列表中的微信号
-# openId_str = os.environ.get("OPEN_ID", "")
-# openId_list = [id.strip() for id in openId_str.split('\n') if id.strip()]
-openId = os.environ.get("OPEN_ID")
+openId_str = os.environ.get("OPEN_ID", "")
+openId_list = [id.strip() for id in openId_str.split('\n') if id.strip()]
+# openId = os.environ.get("OPEN_ID")
 
 # 天气预报模板ID
 weather_template_id = os.environ.get("TEMPLATE_ID")
@@ -91,8 +91,8 @@ def send_weather(access_token, weather):
     today = datetime.date.today()
     today_str = today.strftime("%Y年%m月%d日")
 
-    # for openId in openId_list:
-    for _ in range(0,1):
+    for openId in openId_list:
+    # for _ in range(0,1):
         body = {
             "touser": openId.strip(),
             "template_id": weather_template_id.strip(),
@@ -118,8 +118,8 @@ def send_weather(access_token, weather):
                 }
             }
         }
-    url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}'.format(access_token)
-    print(requests.post(url, json.dumps(body)).text)
+        url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}'.format(access_token)
+        print(requests.post(url, json.dumps(body)).text)
 
 
 
@@ -130,8 +130,8 @@ def weather_report(this_city):
     weather = get_weather(this_city)
     print(f"天气信息： {weather}")
     # 3. 获取用户列表
-    # print(f"用户列表： {openId_list}")
-    print(f"用户列表： {openId}")
+    print(f"用户列表： {openId_list}")
+    # print(f"用户列表： {openId}")
     # 3. 发送消息
     send_weather(access_token, weather)
 
