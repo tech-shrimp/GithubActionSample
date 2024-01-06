@@ -10,7 +10,9 @@ appSecret = os.environ.get("APP_SECRET")
 # 收信人ID即 用户列表中的微信号
 openId_str = os.environ.get("OPEN_ID", "")
 openId_list = [id.strip() for id in openId_str.split('\n') if id.strip()]
-# openId = os.environ.get("OPEN_ID")
+# 读入地址列表
+Location_list_str = os.environ.get("LOCATION", "")
+Location_list = [loc.strip() for loc in Location_list_str.split('\n') if loc.strip()]
 
 # 天气预报模板ID
 weather_template_id = os.environ.get("TEMPLATE_ID")
@@ -81,7 +83,7 @@ def get_daily_love():
     return daily_love
 
 
-def send_weather(access_token, weather):
+def send_weather(access_token, openId, weather):
     # touser 就是 openID
     # template_id 就是模板ID
     # url 就是点击模板跳转的url
@@ -90,52 +92,50 @@ def send_weather(access_token, weather):
     import datetime
     today = datetime.date.today()
     today_str = today.strftime("%Y年%m月%d日")
-
-    for openId in openId_list:
-    # for _ in range(0,1):
-        body = {
-            "touser": openId.strip(),
-            "template_id": weather_template_id.strip(),
-            "url": "https://weixin.qq.com",
-            "data": {
-                "date": {
-                    "value": today_str
-                },
-                "region": {
-                    "value": weather[0]
-                },
-                "weather": {
-                    "value": weather[2]
-                },
-                "temp": {
-                    "value": weather[1]
-                },
-                "wind_dir": {
-                    "value": weather[3]
-                },
-                "today_note": {
-                    "value": get_daily_love()
-                }
+    
+    body = {
+        "touser": openId.strip(),
+        "template_id": weather_template_id.strip(),
+        "url": "https://weixin.qq.com",
+        "data": {
+            "date": {
+                "value": today_str
+            },
+            "region": {
+                "value": weather[0]
+            },
+            "weather": {
+                "value": weather[2]
+            },
+            "temp": {
+                "value": weather[1]
+            },
+            "wind_dir": {
+                "value": weather[3]
+            },
+            "today_note": {
+                "value": get_daily_love()
             }
         }
-        url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}'.format(access_token)
-        print(requests.post(url, json.dumps(body)).text)
+    }
+    url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}'.format(access_token)
+    print(requests.post(url, json.dumps(body)).text)
 
 
 
-def weather_report(this_city):
+def weather_report(this_user, this_city):
     # 1.获取access_token
     access_token = get_access_token()
     # 2. 获取天气
     weather = get_weather(this_city)
     print(f"天气信息： {weather}")
     # 3. 获取用户列表
-    print(f"用户列表： {openId_list}")
-    # print(f"用户列表： {openId}")
+    print(f"用户列表： {this_user}")
     # 3. 发送消息
-    send_weather(access_token, weather)
+    send_weather(access_token, this_user, weather)
 
 
 
 if __name__ == '__main__':
-    weather_report("西安")
+    for _ in range(0,len(openId_list)):
+        weather_report(openId_list[_],Location_list[_])
