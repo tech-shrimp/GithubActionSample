@@ -11,8 +11,7 @@ appSecret = os.environ.get("APP_SECRET")
 openId_str = os.environ.get("OPEN_ID", "")
 openId_list = [id.strip() for id in openId_str.split('\n') if id.strip()]
 # 读入地址列表
-location_str_encoded = os.environ.get("LOCATION_LIST", "").encode('utf-8')
-location_str = location_str_encoded.decode('utf-8')
+location_str = os.environ.get("LOCATION_LIST", "")
 Location_list = [loc.strip() for loc in location_str.split('\n') if loc.strip()]
 
 # 天气预报模板ID
