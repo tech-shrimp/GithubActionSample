@@ -139,5 +139,5 @@ def weather_report(this_user, this_city):
 if __name__ == '__main__':
     print(f"用户列表： {openId_list}")
     print(f"地点列表： {Location_list}")
-    # for _ in range(0,len(openId_list)):
-        # weather_report(openId_list[_],Location_list[_])
+    for _ in range(0,len(openId_list)):
+        weather_report(openId_list[_],Location_list[_])
