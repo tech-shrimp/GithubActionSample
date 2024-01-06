@@ -8,8 +8,9 @@ from bs4 import BeautifulSoup
 appID = os.environ.get("APP_ID")
 appSecret = os.environ.get("APP_SECRET")
 # 收信人ID即 用户列表中的微信号
-openId_str = os.environ.get("OPEN_ID", "")
-openId_list = [id.strip() for id in openId_str.split('\n') if id.strip()]
+# openId_str = os.environ.get("OPEN_ID", "")
+# openId_list = [id.strip() for id in openId_str.split('\n') if id.strip()]
+openId = os.environ.get("OPEN_ID")
 
 # 天气预报模板ID
 weather_template_id = os.environ.get("TEMPLATE_ID")
@@ -90,7 +91,7 @@ def send_weather(access_token, weather):
     today = datetime.date.today()
     today_str = today.strftime("%Y年%m月%d日")
 
-    for openId in openId_list:
+    # for openId in openId_list:
         body = {
             "touser": openId.strip(),
             "template_id": weather_template_id.strip(),
