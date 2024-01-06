@@ -20,13 +20,6 @@ jobs:
       TZ: Asia/Shanghai
     steps:
     - uses: actions/checkout@v3
-    - name: Debug Environment Variables
-      run: |
-        echo "LOCATION: $LOCATION"
-        echo "APP_ID: $APP_ID"
-        echo "APP_SECRET: $APP_SECRET"
-        echo "OPEN_ID: $OPEN_ID"
-        echo "TEMPLATE_ID: $TEMPLATE_ID"
     - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
