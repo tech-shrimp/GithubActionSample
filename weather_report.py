@@ -15,6 +15,7 @@ weather_template_id = os.environ.get("TEMPLATE_ID")
 city = os.environ.get("CITY")
 
 def get_weather(my_city):
+    print(my_city+"my_city??")
     urls = ["http://www.weather.com.cn/textFC/hb.shtml",
             "http://www.weather.com.cn/textFC/db.shtml",
             "http://www.weather.com.cn/textFC/hd.shtml",
