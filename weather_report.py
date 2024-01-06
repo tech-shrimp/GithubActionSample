@@ -92,6 +92,7 @@ def send_weather(access_token, weather):
     today_str = today.strftime("%Y年%m月%d日")
 
     # for openId in openId_list:
+    for _ in range(0,1):
         body = {
             "touser": openId.strip(),
             "template_id": weather_template_id.strip(),
