@@ -4,6 +4,8 @@
 
 ### 视频教程
 
+https://www.bilibili.com/video/BV11e411i7Xx/
+
 作者 **技术爬爬虾** 全网同名，转载请注明作者
 
 ## Part1 构建画爱心为可执行程序
@@ -16,6 +18,11 @@ Actions-->画爱心Windows版-->run work flow-->结束后查看结果
 构架Ubuntu 可执行程序:
 Actions-->画爱心Ubuntu版-->run work flow-->结束后查看结果
 -->Artifacts-->下载love_heart
+
+构架MacOS 可执行程序:
+Actions-->画爱心MacOS版-->run work flow-->结束后查看结果
+-->Artifacts-->下载love_heart
+
 
 ## Part2 天气推送
 
@@ -64,7 +71,7 @@ Fork本项目
 
 <img width="935" alt="image" src="https://github.com/tech-shrimp/GithubActionSample/assets/154193368/97139add-a410-4e73-82d3-055c8136ed57">
 
-将其填入  Settings  ----> Secrets and variables ---> Actions --> New repository secret
+将其填入  Settings  ----> Secrets and variables ---> Actions --> New repository secret -->新增JD_COOKIE
 <img width="685" alt="image" src="https://github.com/tech-shrimp/GithubActionSample/assets/154193368/e28ee156-642a-4c25-94ff-d42af072aa15">
 
 进入自己项目的Action  ----> 签到薅羊毛 ---> daily_sign.yml --> 修改cron表达式的执行时间
