@@ -5,7 +5,7 @@ name: 天气预报推送
 
 on:
   schedule:
-    # 设置启动时间，为 UTC 时间。
+    # 设置启动时间，为 UTC 时间, UTC23点 对应北京时间早7点
     - cron : '00 23 * * *'
   workflow_dispatch:
 
@@ -36,4 +36,3 @@ jobs:
         APP_SECRET: ${{ secrets.APP_SECRET }}
         OPEN_ID: ${{ secrets.OPEN_ID }}
         TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
-        LOCATION_LIST: ${{ secrets.LOCATION_LIST }}
