@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: 画爱心Ubuntu版
+name: 画爱心
 
 on:
   workflow_dispatch:
@@ -11,12 +11,21 @@ permissions:
 
 jobs:
   pyinstaller-build:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: [macos, ubuntu, windows]
+            arch: x64
+          - os: windows
+            arch: x86
+    runs-on: ${{ matrix.os }}-latest
     steps:
       - name: Create Executable
         uses: sayyid5416/pyinstaller@v1
         with:
           python_ver: '3.12'
+          python_arch: ${{ matrix.arch }}
           spec: 'love_heart.py'
-          upload_exe_with_name: 'love_heart'
-          options: --onefile, --name "love_heart", --windowed, 
+          upload_exe_with_name: 'love_heart-${{ matrix.os }}-${{ matrix.arch }}'
+          options: --onefile, --name "love_heart-${{ matrix.os }}-${{ matrix.arch }}", --windowed,
