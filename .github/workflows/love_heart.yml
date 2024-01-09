@@ -14,9 +14,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        os: [macos, ubuntu, windows]
+        arch: [x64]
         include:
-          - os: [macos, ubuntu, windows]
-            arch: x64
           - os: windows
             arch: x86
     runs-on: ${{ matrix.os }}-latest
