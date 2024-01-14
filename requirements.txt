@@ -1,3 +1,3 @@
-requests
-bs4
-html5lib
+pyautogui
+xlrd
+pyperclip
