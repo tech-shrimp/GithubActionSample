@@ -85,7 +85,9 @@ def send_weather(access_token, weather):
     # data就按这种格式写，time和text就是之前{{time.DATA}}中的那个time，value就是你要替换DATA的值
 
     import datetime
-    today = datetime.date.today()
+    # 将日期时间调整为 UTC+8 时区
+    today = datetime.date.today() + datetime.timedelta(hours=8)
+    # today = datetime.date.today()
     today_str = today.strftime("%Y年%m月%d日")
 
     body = {
