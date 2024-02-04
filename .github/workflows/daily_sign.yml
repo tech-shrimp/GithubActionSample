@@ -16,7 +16,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      TZ: Asia/Beijing
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.12
