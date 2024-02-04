@@ -27,7 +27,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Run weather Report
+    - name: Run daily_sign.py
       run: |
         python daily_sign.py
       env:
