@@ -14,7 +14,6 @@ headers = {"Connection": 'keep-alive',
            "Cache-Control": 'no-cache',
            "User-Agent": "okhttp/3.12.1;jdmall;android;version/10.3.4;build/92451;",
            "accept": "*/*",
-           "connection": "Keep-Alive",
            "Accept-Encoding": "gzip,deflate",
            "Cookie": cookie
            }
