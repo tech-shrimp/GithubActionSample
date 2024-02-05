@@ -17,14 +17,14 @@ jobs:
 
     runs-on: windows-latest
     env:
-      TZ: Asia/Beijing
+      TZ: Asia/Shanghai
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v1
     - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
         python-version: "3.12"
-        spec: 'daily_sign.py'
+        # spec: 'daily_sign.py'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
