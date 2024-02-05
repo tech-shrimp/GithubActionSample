@@ -6,7 +6,7 @@ name: 天气预报推送
 on:
   schedule:
     # 设置启动时间，为 UTC 时间, UTC23点 对应北京时间早7点
-    - cron : '58 12,22 * * *'
+    - cron : '57 12,22 * * *'
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      TZ: Asia/Beijing
+      TZ: Asia/Shanghai
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.12
