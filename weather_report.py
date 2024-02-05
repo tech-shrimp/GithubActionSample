@@ -86,8 +86,8 @@ def send_weather(access_token, weather):
 
     import datetime
     # 将日期时间调整为 UTC+8 时区
-    today = datetime.date.today() + datetime.timedelta(hours=8)
-    # today = datetime.date.today()
+    # today = datetime.date.today() + datetime.timedelta(hours=8)
+    today = datetime.date.today()
     today_str = today.strftime("%Y年%m月%d日")
 
     body = {
